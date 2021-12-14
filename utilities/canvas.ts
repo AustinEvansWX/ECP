@@ -38,28 +38,38 @@ export class Canvas {
 
   setColor(color: string): void {
     this.context.fillStyle = color;
+    this.context.strokeStyle = color;
   }
 
-  drawRect(pos: Vector2, width: number, height: number, angle: number, color?: string): void {
+  drawRect(x: number, y: number, width: number, height: number, angle: number, color?: string): void {
     if (color) this.setColor(color);
 
     if (angle > 0) {
       this.context.save();
-      this.context.translate(pos.x + width / 2, pos.y + height / 2);
+      this.context.translate(x + width / 2, y + height / 2);
       this.context.rotate(angle * (Math.PI / 180));
-      this.context.translate(-(pos.x + width / 2), -(pos.y + height / 2));
-      this.context.fillRect(pos.x, pos.y, width, height);
+      this.context.translate(-(x + width / 2), -(y + height / 2));
+      this.context.fillRect(x, y, width, height);
       this.context.restore();
     } else {
-      this.context.fillRect(pos.x, pos.y, width, height);
+      this.context.fillRect(x, y, width, height);
     }
   }
 
-  drawCircle(pos: Vector2, radius: number, color?: string): void {
+  drawCircle(x: number, y: number, radius: number, color?: string): void {
     if (color) this.setColor(color);
 
     this.context.beginPath();
-    this.context.arc(pos.x, pos.y, radius, 0, Math.PI * 2);
+    this.context.arc(x, y, radius, 0, Math.PI * 2);
     this.context.fill();
+  }
+
+  drawLine(x1: number, y1: number, x2: number, y2: number, color?: string): void {
+    if (color) this.setColor(color);
+
+    this.context.beginPath();
+    this.context.moveTo(x1, y1);
+    this.context.lineTo(x2, y2);
+    this.context.stroke();
   }
 }

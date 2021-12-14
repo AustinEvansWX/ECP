@@ -10,7 +10,9 @@
   "author": "Austin Evans",
   "license": "ISC",
   "dependencies": {
+    "@types/jquery": "^3.5.10",
     "electron": "^16.0.4",
-    "electron-reloader": "^1.2.1"
+    "electron-reloader": "^1.2.1",
+    "jquery": "^3.6.0"
   }
 }
