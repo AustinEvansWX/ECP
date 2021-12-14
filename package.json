@@ -1,0 +1,16 @@
+{
+  "name": "ecp",
+  "version": "1.0.0",
+  "description": "Electron Canvas Playground",
+  "main": "build/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "Austin Evans",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^16.0.4",
+    "electron-reloader": "^1.2.1"
+  }
+}

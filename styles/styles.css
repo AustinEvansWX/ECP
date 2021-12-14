@@ -1,0 +1,13 @@
+body {
+  margin: 1rem;
+  background: rgb(10, 10, 10);
+  height: calc(100vh - 2rem);
+}
+
+canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 10px black;
+}
