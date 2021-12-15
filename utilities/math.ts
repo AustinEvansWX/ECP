@@ -26,4 +26,10 @@ class Vector2 {
   }
 }
 
-export { Vector2 };
+function randomInt(min: number, max: number): number {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+export { Vector2, randomInt };
